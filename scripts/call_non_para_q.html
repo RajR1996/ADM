@@ -1,0 +1,20 @@
+<html>
+<!-- remove these style tags to remove the large font size -->
+<style type="text/css">  p {font-size: x-large}  </style>
+<style type="text/css">  form {font-size: x-large}  </style>
+
+<p>NON-PARAMETERISED QUERY Example</p>
+<p>This form returns rows from the EMP table which match the specified job type.</p>
+<br/>
+<p>The form accepts the input value, posts it to a session variable $_POST['job'], then launches non_para_q_emp.php <p>
+<p>Next, para_q_emp.php reads $_POST['job'] into the PHP variable $job</p>
+<p>The SQL statement contains $job embedded directly as a character string.</p>
+<p>Oracle parses the entire statement including the user-input character string (which might change the meaning of the SQL), this is the risk of SQL Injection.</p>  
+<br/><br/>
+
+
+<form action="non_para_q_emp.php" method="post">
+  Specify Job: <input type="text" name="job"><br>
+  <input type="submit" value="Submit">
+</form>
+</html>
